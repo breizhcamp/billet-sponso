@@ -8,12 +8,14 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 @ConfigurationProperties("billets")
 class AppProps {
 
-    lateinit var sponsorsFile: String
-    lateinit var ticketsTypeId: List<String>
-    val billetweb = BilletWeb()
+    var sponsorsFile = "src/test/resources/sponsors.json"
+    var ticketsTypeId = listOf("combo", "exposants")
 
+    val billetweb = BilletWeb()
     class BilletWeb {
-        var url = "https://www.billetweb.fr/api/"
+        var url = "http://localhost:9080/"
+        var eventId = "12345"
+
         lateinit var user: String
         lateinit var key: String
     }
