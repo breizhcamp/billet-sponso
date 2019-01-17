@@ -17,7 +17,10 @@ class BilletsCtrl(val billetWebSrv: BilletWebSrv, val sponsoSrv: SponsoSrv) {
     @GetMapping("/billets/{token}")
     fun list(@PathVariable token: String, model: Model) : String {
         val sponsor = sponsoSrv.getSponsor(token) ?: throw FileNotFoundException()
+        val attendees = billetWebSrv.listAttendeesByTickets()
+
         model.addAttribute("sponsor", sponsor)
+        model.addAttribute("attendees", attendees)
 
         return "billets"
     }

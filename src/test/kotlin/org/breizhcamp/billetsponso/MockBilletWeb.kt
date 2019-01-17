@@ -9,6 +9,7 @@ fun main(args: Array<String>) {
             .threadPool(4, 2, 3600)
 
     http.get("/api/event/:eventId/attendees") {
+        response.header("Content-Type", "application/json;charset=utf-8")
         val ticket = request.queryParams("ticket")
         javaClass.getResourceAsStream("/attendees/$ticket.json").copyTo(response.raw().outputStream)
         ""
