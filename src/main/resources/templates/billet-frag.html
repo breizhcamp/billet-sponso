@@ -5,8 +5,8 @@
 <div th:fragment="billet(a)" th:remove="tag">
 	<div  class="row no-gutters billet" th:object="${a}">
 		<div class="col-sm-auto user-icon" th:switch="*{#strings.isEmpty(name)} or *{#strings.isEmpty(firstname)} or *{#strings.isEmpty(email)}">
-			<i th:case="${true}" class="fas fa-user-clock"></i>
-			<i th:case="${false}" class="fas fa-user-check"></i>
+			<i th:case="${true}" class="fas fa-user-clock text-danger"></i>
+			<i th:case="${false}" class="fas fa-user-check text-success"></i>
 		</div>
 
 		<div class="col-sm">

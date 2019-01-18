@@ -18,12 +18,12 @@ class BilletWebSrv(final val appProps: AppProps) {
     /**
      * Retrieve list of attendees, group by ticket label (ex: "Exposant")
      */
-    fun listAttendeesByTickets() : Map<String, List<Attendee>> {
+    fun listAttendeesByTickets(order: String) : Map<String, List<Attendee>> {
 
         val fluxes = appProps.ticketsTypeId.map { listAttendees(appProps.billetweb.eventId, it) }
         val attendees = Flux.merge(fluxes).collectList().block() ?: return emptyMap()
 
-        return attendees.groupBy { it.ticket }
+        return attendees.filter { it.orderExtId == order }.groupBy { it.ticket }
     }
 
     /**
