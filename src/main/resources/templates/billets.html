@@ -24,14 +24,24 @@
             <p>Si vous le pouvez, remplissez les billets au plus tôt, les demandes pour les codes wifi partirons
                 <strong>fin février</strong> et ne pourrons être fournis après.</p>
 
-            <p>Vous pouvez remplir l'intégralité des billets sur <a href="#" target="_blank">cette page</a>
+            <p>Vous pouvez remplir l'intégralité des billets sur <a href="#" th:href="${management_url}" target="_blank">cette page</a>
             ou bien les remplir de manière individuelles ci-dessous.</p>
 
             <h2>Billets Combo (3 jours d'accès à la conférence)</h2>
             <p>Vous pouvez envoyer le lien individuel aux participants pour qu'ils remplissent eux-même leurs informations.</p>
 
-            <th:block th:include="billet-frag :: billet"/>
-            <th:block th:include="billet-frag :: billet"/>
+            <div th:each="a : ${attendees.get('Combo Sponsors (3 jours)')}">
+               <th:block th:include="billet-frag :: billet(${a})"/>
+            </div>
+
+
+            <h2>Exposants</h2>
+            <p>Billet permettant d'accéder aux stands mais pas aux conférences (RH, commerciaux...)</p>
+
+            <div th:each="a : ${attendees.get('Exposant')}">
+                <th:block th:include="billet-frag :: billet(${a})"/>
+            </div>
+
 
         </div>
     </div>

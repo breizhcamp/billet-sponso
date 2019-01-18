@@ -2,32 +2,41 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<div th:fragment="billet" th:remove="tag">
-	<div  class="row no-gutters billet">
-		<div class="col-sm-auto user-icon">
-			<i class="fas fa-user-clock"></i>
-			<!-- <i class="fas fa-user-check"></i> -->
-		</div>
-
-		<div class="col-sm">
-			<div>NOM Prénom <small>- Société</small></div>
-			<div>prenom.nom@example.org</div>
+<div th:fragment="billet(a)" th:remove="tag">
+	<div  class="row no-gutters billet" th:object="${a}">
+		<div class="col-sm-auto user-icon" th:switch="*{#strings.isEmpty(name)} or *{#strings.isEmpty(firstname)} or *{#strings.isEmpty(email)}">
+			<i th:case="${true}" class="fas fa-user-clock"></i>
+			<i th:case="${false}" class="fas fa-user-check"></i>
 		</div>
 
 		<div class="col-sm">
 			<div>
-				<i class="fab fa-twitter"></i> twitter
-				- <i class="fas fa-tshirt" title="T-Shirt"></i> F XS
+				<span th:text="|*{name} *{firstname}|">NOM Prénom</span>
+				<small th:if="*{not #strings.isEmpty(custom.entreprise)}" th:text="|- *{custom.entreprise}|">- Société</small>
+			</div>
+			<div th:text="*{email}">prenom.nom@example.org</div>
+		</div>
+
+		<div class="col-sm">
+			<div>
+				<i class="fab fa-twitter"></i> <span th:text="*{custom.twitter}">twitter</span>
+				- <i class="fas fa-tshirt" title="T-Shirt"></i>
+					<span th:text="*{custom.coupeTShirt}">F</span>
+					<span th:text="*{custom.tailleTShirt}">XS</span>
 			</div>
 			<div>
-				<i class="fas fa-utensils" title="Participation au Meet and Greet"></i> Oui <i class="fab fa-pagelines" title="Repas Végétarien"></i>
-				- <i class="fas fa-globe-europe" title="Code Postal"></i> 35510
+				<i class="fas fa-utensils" title="Participation au Meet and Greet"></i> <span th:text="*{custom.meetAndGreet}">Oui</span>
+				<i class="fab fa-pagelines" title="Repas Végétarien" th:if="*{custom.vegetarien == 'Oui'}"></i>
+
+				- <i class="fas fa-globe-europe" title="Code Postal"></i> <span th:text="*{custom.codePostal}">35510</span>
 			</div>
 		</div>
 
 		<div class="col-md-3 col-lg-2 text-right align-self-center">
-			<a href="#" class="btn btn-primary"><i class="fas fa-pen"></i></a>
-			<a href="#" class="btn btn-primary"><i class="fas fa-envelope"></i></a>
+			<a href="#" th:href="*{productManagement}" class="btn btn-primary" target="_blank"><i class="fas fa-pen"></i></a>
+			<a href="#" th:href="'mailto:?Subjet=Votre billet pour le BreizhCamp&body=Bonjour,%0d%0a%0d%0aVous pouvez remplir votre billet pour le BreizhCamp a cette adresse : ' + *{#strings.replace(productManagement, '&amp;', '%26')} + ' %0d%0a%0d%0aMerci.'" class="btn btn-primary">
+				<i class="fas fa-envelope"></i>
+			</a>
 		</div>
 	</div>
 </div>

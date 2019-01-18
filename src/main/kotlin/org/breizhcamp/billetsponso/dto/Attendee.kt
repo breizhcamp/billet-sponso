@@ -31,5 +31,7 @@ data class Attendee(
         @JsonProperty("order_email")
         val orderEmail: String,
         @JsonProperty("order_management")
-        val orderManagement: String
+        val orderManagement: String,
+
+        val custom: AttendeeCustom
 )

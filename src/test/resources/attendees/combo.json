@@ -6,9 +6,9 @@
         "used": "0",
         "lane": "",
         "used_date": "0000-00-00 00:00:00",
-        "email": "",
-        "firstname": "",
-        "name": "",
+        "email": "jack.bauer@example.org",
+        "firstname": "Jack",
+        "name": "Bauer",
         "ticket": "Combo Sponsors (3 jours)",
         "ticket_id": "200",
         "price": "0.00",
@@ -34,13 +34,13 @@
         "order_accreditation": "0",
         "order_management": "https:\/\/www.billetweb.fr\/my_order.php?order=C200-2000-E20000&key=123456789",
         "custom": {
-            "Entreprise": "",
-            "Taille T-Shirt": "",
-            "Twitter": "",
-            "Participation au meet'n'greet (repas jeudi soir) ?": "",
-            "Coupe T-Shirt": "",
-            "Repas v\u00e9g\u00e9tarien": "",
-            "Code postal": ""
+            "Entreprise": "CTU",
+            "Taille T-Shirt": "L",
+            "Twitter": "jack",
+            "Participation au meet'n'greet (repas jeudi soir) ?": "oui",
+            "Coupe T-Shirt": "M",
+            "Repas v\u00e9g\u00e9tarien": "oui",
+            "Code postal": "35000"
         },
         "custom_order": {
             "Entreprise": "BreizhCamp"

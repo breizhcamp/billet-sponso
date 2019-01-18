@@ -22,6 +22,9 @@ class BilletsCtrl(val billetWebSrv: BilletWebSrv, val sponsoSrv: SponsoSrv) {
         model.addAttribute("sponsor", sponsor)
         model.addAttribute("attendees", attendees)
 
+        val management = attendees.values.first().first().orderManagement
+        model.addAttribute("management_url", management)
+
         return "billets"
     }
 
