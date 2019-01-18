@@ -1,0 +1,11 @@
+.billet {
+	background-color: rgba(0,0,0,.05);
+	border: 1px solid #dee2e6;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+.billet .user-icon {
+	font-size: 2em;
+	margin-right: 10px;
+}

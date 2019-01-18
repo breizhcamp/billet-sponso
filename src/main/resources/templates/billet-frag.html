@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="billet" th:remove="tag">
+	<div  class="row no-gutters billet">
+		<div class="col-sm-auto user-icon">
+			<i class="fas fa-user-clock"></i>
+			<!-- <i class="fas fa-user-check"></i> -->
+		</div>
+
+		<div class="col-sm">
+			<div>NOM Prénom <small>- Société</small></div>
+			<div>prenom.nom@example.org</div>
+		</div>
+
+		<div class="col-sm">
+			<div>
+				<i class="fab fa-twitter"></i> twitter
+				- <i class="fas fa-tshirt" title="T-Shirt"></i> F XS
+			</div>
+			<div>
+				<i class="fas fa-utensils" title="Participation au Meet and Greet"></i> Oui <i class="fab fa-pagelines" title="Repas Végétarien"></i>
+				- <i class="fas fa-globe-europe" title="Code Postal"></i> 35510
+			</div>
+		</div>
+
+		<div class="col-md-3 col-lg-2 text-right align-self-center">
+			<a href="#" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+			<a href="#" class="btn btn-primary"><i class="fas fa-envelope"></i></a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
