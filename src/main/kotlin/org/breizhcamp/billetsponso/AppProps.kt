@@ -16,8 +16,8 @@ class AppProps {
         var url = "http://localhost:9080/"
         var eventId = "12345"
 
-        lateinit var user: String
-        lateinit var key: String
+        var user: String = "1"
+        var key: String = "987654321"
     }
 
 }

@@ -9,7 +9,14 @@ fun main(args: Array<String>) {
             .threadPool(4, 2, 3600)
 
     http.get("/api/event/:eventId/attendees") {
-        response.header("Content-Type", "application/json;charset=utf-8")
+        //BilletWeb always respond with text/html content even for json :(
+        response.header("Content-Type", "text/html;charset=utf-8")
+
+        val user = request.queryParams("user")
+        val key = request.queryParams("key")
+        val version = request.queryParams("version")
+        if (user == null || key == null || version == null) return@get "NOT AUTHENTICATED"
+
         val ticket = request.queryParams("ticket")
         javaClass.getResourceAsStream("/attendees/$ticket.json").copyTo(response.raw().outputStream)
         ""
