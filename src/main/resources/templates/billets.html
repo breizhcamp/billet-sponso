@@ -27,6 +27,10 @@
             <p>Vous pouvez remplir l'intégralité des billets sur <a href="#" th:href="${management_url}" target="_blank">cette page</a>
             ou bien les remplir de manière individuelles ci-dessous.</p>
 
+            <p class="lead">Une fois les billets modifiés, cliquez sur ce bouton pour mettre à jour la page :
+                <a class="btn btn-primary" href="." th:href="'?v=' + ${#dates.createNow().getTime()}">Recharger la page</a>
+            </p>
+
             <h2>Billets Combo (3 jours d'accès à la conférence)</h2>
             <p>Vous pouvez envoyer le lien individuel aux participants pour qu'ils remplissent eux-même leurs informations.</p>
 
