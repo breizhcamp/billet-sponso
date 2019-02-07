@@ -22,5 +22,8 @@ data class AttendeeCustom(
         val vegetarien: String,
 
         @JsonProperty("Code postal")
-        val codePostal: String
+        val codePostal: String,
+
+        @JsonProperty("Pas de goodies")
+        val noGoodies: String?
 )

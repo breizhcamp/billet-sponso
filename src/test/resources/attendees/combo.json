@@ -82,6 +82,7 @@
         "order_management": "https:\/\/www.billetweb.fr\/my_order.php?order=C201-2001-E20001&key=123456789",
         "custom": {
             "Entreprise": "",
+            "Pas de goodies": "1",
             "Taille T-Shirt": "",
             "Twitter": "",
             "Participation au meet'n'greet (repas jeudi soir) ?": "",
