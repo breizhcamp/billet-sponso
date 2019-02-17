@@ -39,11 +39,13 @@
             </div>
 
 
-            <h2>Exposants</h2>
-            <p>Billet permettant d'accéder aux stands mais pas aux conférences (RH, commerciaux...)</p>
+            <div th:if="${not #lists.isEmpty(attendees.get('Exposant'))}">
+                <h2>Exposants</h2>
+                <p>Billet permettant d'accéder aux stands mais pas aux conférences (RH, commerciaux...)</p>
 
-            <div th:each="a : ${attendees.get('Exposant')}">
-                <th:block th:include="billet-frag :: billet(${a})"/>
+                <div th:each="a : ${attendees.get('Exposant')}">
+                    <th:block th:include="billet-frag :: billet(${a})"/>
+                </div>
             </div>
 
 
