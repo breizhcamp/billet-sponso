@@ -31,16 +31,24 @@
                 <a class="btn btn-primary" href="." th:href="'?v=' + ${#dates.createNow().getTime()}">Recharger la page</a>
             </p>
 
-            <h2>Billets Combo (3 jours d'accès à la conférence)</h2>
-            <p>Vous pouvez envoyer le lien individuel aux participants pour qu'ils remplissent eux-même leurs informations.</p>
+            <div class="tarif">
+                <h2>
+                    <span th:text="${#lists.size(attendees.get('Combo Sponsors (3 jours)'))}">3</span>
+                    Billets Combo (3 jours d'accès à la conférence)
+                </h2>
+                <p>Vous pouvez envoyer le lien individuel aux participants pour qu'ils remplissent eux-même leurs informations.</p>
 
-            <div th:each="a : ${attendees.get('Combo Sponsors (3 jours)')}">
-               <th:block th:include="billet-frag :: billet(${a})"/>
+                <div th:each="a : ${attendees.get('Combo Sponsors (3 jours)')}">
+                   <th:block th:include="billet-frag :: billet(${a})"/>
+                </div>
             </div>
 
 
-            <div th:if="${not #lists.isEmpty(attendees.get('Exposant'))}">
-                <h2>Exposants</h2>
+            <div th:if="${not #lists.isEmpty(attendees.get('Exposant'))}" class="tarif">
+                <h2>
+                    <span th:text="${#lists.size(attendees.get('Exposant'))}">3</span>
+                    Billets Exposants
+                </h2>
                 <p>Billet permettant d'accéder aux stands mais pas aux conférences (RH, commerciaux...)</p>
 
                 <div th:each="a : ${attendees.get('Exposant')}">
