@@ -15,7 +15,7 @@ data class AttendeeCustom(
         @JsonProperty("Coupe T-Shirt")
         val coupeTShirt: String?,
 
-        @JsonProperty("Participation au meet'n'greet (repas jeudi soir) ?")
+        @JsonProperty("Participation au meet'n'greet (repas jeudi soir) ?") //attention, espace insecable devant le ?
         val meetAndGreet: String?,
 
         @JsonProperty("Repas végétarien")
