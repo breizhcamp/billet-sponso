@@ -9,7 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 class AppProps {
 
     var sponsorsFile = "src/test/resources/sponsors.json"
-    var ticketsTypeId = listOf("combo", "exposants")
 
     val billetweb = BilletWeb()
     class BilletWeb {

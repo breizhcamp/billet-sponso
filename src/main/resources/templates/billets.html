@@ -33,12 +33,12 @@
 
             <div class="tarif">
                 <h2>
-                    <span th:text="${#lists.size(attendees.get('Combo Sponsors (3 jours)'))}">3</span>
+                    <span th:text="${#lists.size(attendees.get('Pass 3 jours (Sponsors)'))}">3</span>
                     Billets Combo (3 jours d'accès à la conférence)
                 </h2>
                 <p>Vous pouvez envoyer le lien individuel aux participants pour qu'ils remplissent eux-même leurs informations.</p>
 
-                <div th:each="a : ${attendees.get('Combo Sponsors (3 jours)')}">
+                <div th:each="a : ${attendees.get('Pass 3 jours (Sponsors)')}">
                    <th:block th:include="billet-frag :: billet(${a})"/>
                 </div>
             </div>

@@ -33,5 +33,5 @@ data class Attendee(
         @JsonProperty("order_management")
         val orderManagement: String,
 
-        val custom: AttendeeCustom
+        val custom: AttendeeCustom?
 )
