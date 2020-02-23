@@ -33,10 +33,9 @@ class BilletWebSrv(final val appProps: AppProps, val objectMapper: ObjectMapper)
      */
     fun listAttendeesByTickets(order: String) : Map<String, List<Attendee>> {
 
-        val fluxes = listOf(listAttendees(appProps.billetweb.eventId))
-        val attendees = Flux.merge(fluxes).collectList().block() ?: return emptyMap()
+        val attendees = listAttendees(appProps.billetweb.eventId).collectList().block() ?: return emptyMap()
 
-        return attendees.filter { it.orderExtId == order }.groupBy { it.ticket }
+        return attendees.filter { it.orderId == order }.groupBy { it.ticket }
     }
 
     /**
