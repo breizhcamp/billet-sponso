@@ -5,18 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.2.RELEASE</version>
+		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.breizhcamp</groupId>
 	<artifactId>billet-sponso</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>billet-sponso</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Edit billets for sponsors</description>
 
 	<properties>
-		<java.version>1.8</java.version>
-		<kotlin.version>1.2.71</kotlin.version>
+		<java.version>11</java.version>
+		<kotlin.version>1.6.21</kotlin.version>
 	</properties>
 
 	<dependencies>
@@ -46,6 +46,10 @@
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-stdlib-jdk8</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.jetbrains.kotlinx</groupId>
+			<artifactId>kotlinx-coroutines-reactor</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -72,6 +76,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -110,7 +119,7 @@
 								<annotationProcessorPath>
 									<groupId>org.springframework.boot</groupId>
 									<artifactId>spring-boot-configuration-processor</artifactId>
-									<version>1.5.3.RELEASE</version>
+									<version>2.7.0</version>
 								</annotationProcessorPath>
 							</annotationProcessorPaths>
 						</configuration>
