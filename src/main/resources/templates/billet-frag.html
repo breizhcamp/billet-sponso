@@ -19,15 +19,14 @@
 
 		<div class="col-sm">
 			<div>
-				<i class="fab fa-twitter"></i> <span th:text="*{custom.twitter}">twitter</span>
-				- <i class="fas fa-tshirt" title="T-Shirt"></i>
-					<span th:if="*{custom.noGoodies != '1'}">
-						<span th:text="*{custom.coupeTShirt}">F</span>
-						<span th:text="*{custom.tailleTShirt}">XS</span>
-					</span>
-					<span th:if="*{custom.noGoodies == '1'}">
-						Pas de goodies
-					</span>
+				<i class="fas fa-tshirt" title="T-Shirt"></i>
+				<span th:if="*{custom.noGoodies != '1'}">
+					<span th:text="*{custom.coupeTShirt}">F</span>
+					<span th:text="*{custom.tailleTShirt}">XS</span>
+				</span>
+				<span th:if="*{custom.noGoodies == '1'}">
+					Pas de goodies
+				</span>
 			</div>
 			<div>
 				<i class="fas fa-utensils" title="Participation au Meet and Greet"></i> <span th:text="*{custom.meetAndGreet}">Oui</span>
