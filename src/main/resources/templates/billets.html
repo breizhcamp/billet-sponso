@@ -21,10 +21,10 @@
             <h1 th:text="|Billets ${sponsor.name}|">Billets Ma Société</h1>
             <p><em>Cette page vous permettra de configurer les billets achetés via le sponsoring.</em></p>
 
-            <p>La date limite de remplissage est fixée au <strong>26 juin</strong> afin de nous laisser le temps
+            <p>La date limite de remplissage est fixée au <strong>24 juin</strong> afin de nous laisser le temps
                 d'imprimer les badges, ils seront remplis avec des noms génériques sinon.</p>
 
-            <p>Vous pouvez remplir l'intégralité des billets sur <a href="#" th:href="${management_url}" target="_blank">cette page</a>
+            <p>Vous pouvez remplir <strong>l'intégralité</strong> des billets sur <a href="#" th:href="${management_url}" target="_blank">cette page</a>
             ou bien les remplir de manière individuelle ci-dessous.</p>
 
             <p class="lead">Une fois les billets modifiés, cliquez sur ce bouton pour mettre à jour la page :
@@ -49,7 +49,7 @@
                     <span th:text="${#lists.size(attendees.get('Exposant'))}">3</span>
                     Billets Exposants
                 </h2>
-                <p>Billet permettant d'accéder aux stands mais pas aux conférences (RH, commerciaux...)</p>
+                <p>Cette année, les billets exposants sont identiques aux billets 3 jours et permettent d'accéder aux conférences</p>
 
                 <div th:each="a : ${attendees.get('Exposant')}">
                     <th:block th:include="billet-frag :: billet(${a})"/>
