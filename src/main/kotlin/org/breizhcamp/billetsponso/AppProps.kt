@@ -9,6 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 class AppProps {
 
     var sponsorsFile = "src/test/resources/sponsors.json"
+    var limitDate = "lundi 22 juin"
 
     val billetweb = BilletWeb()
     class BilletWeb {
